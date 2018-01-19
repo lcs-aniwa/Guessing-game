@@ -6,16 +6,32 @@
 //  Copyright © 2018 Ayana Niwa. All rights reserved.
 //
 
+
 import Foundation
 
 struct GuessingGame {
-    //Properties
+    
+    //MARK Properties
     var numberToGuess : Int
     
-    //Initializer
+    //MARK: Initializer (s)
     init() {
-        //Generate the random number
-        numberToGuess = Int (arc4random_uniform(501)) // Ger a number between 0 & 500
+         numberToGuess = Int(arc4random_uniform(500))
         
     }
+    
+    //MARK : Functions
+    func checkGuessGiveFeedback(guess : Int) -> String {
+        if guess < numberToGuess {
+            return "Guess higher"
+        } else if guess > numberToGuess {
+            return "Guess lower"
+        } else {
+            return "Yes! you are right"
+                
+        }
+                
+        
+    }
+        
 }
