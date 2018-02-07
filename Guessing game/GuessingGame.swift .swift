@@ -13,15 +13,25 @@ struct GuessingGame {
     
     //MARK Properties
     var numberToGuess : Int
+    var numbersGuessed : [Int]
     
     //MARK: Initializer (s)
     init() {
-         numberToGuess = Int(arc4random_uniform(500))
+         numberToGuess = Int(arc4random_uniform(501))
+        // Generate a number between ) and 500 (not 501)
+        
+        // Make an empty list of numbers guessed
+        numbersGuessed = []
         
     }
     
     //MARK : Functions
-    func checkGuessGiveFeedback(guess : Int) -> String {
+    mutating func checkGuessGiveFeedback(guess : Int) -> String {
+        
+        // Add the provided guess to the list of guesses made
+        numbersGuessed.append(guess)
+        
+        //compare the provided guess to the random number
         if guess < numberToGuess {
             return "Guess higher"
         } else if guess > numberToGuess {

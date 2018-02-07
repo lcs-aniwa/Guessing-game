@@ -49,6 +49,9 @@ class ViewController: UIViewController {
         //The number to guess is
         print("The number to guess is:")
         print(game.numberToGuess)
+        
+        // sent over the paiment
+    
 
     }
     
