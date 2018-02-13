@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     // MARK: Outletts
     @IBOutlet weak var numberGuess: UITextField!
+    @IBOutlet weak var messagerToUser: UILabel!
+    
     // MARK: Properties (variables)
     var game = GuessingGame()
     
@@ -50,7 +52,9 @@ class ViewController: UIViewController {
         print("The number to guess is:")
         print(game.numberToGuess)
         
-        // sent over the paiment
+        // compare the numbers
+        messagerToUser.text = game.checkGuessGiveFeedback(guess: integerGiven)
+        
     
 
     }
